@@ -3,7 +3,6 @@
 #[cfg(feature = "rayon")]
 pub use crate::rayon::set as rayon;
 
-#[cfg(has_std)]
 use std::collections::hash_map::RandomState;
 
 use crate::vec::{self, Vec};
@@ -59,12 +58,7 @@ type Bucket<T> = super::Bucket<T, ()>;
 /// assert!(letters.contains(&'u'));
 /// assert!(!letters.contains(&'y'));
 /// ```
-#[cfg(has_std)]
 pub struct IndexSet<T, S = RandomState> {
-    map: IndexMap<T, (), S>,
-}
-#[cfg(not(has_std))]
-pub struct IndexSet<T, S> {
     map: IndexMap<T, (), S>,
 }
 

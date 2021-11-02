@@ -67,13 +67,7 @@ pub use self::core::{Entry, OccupiedEntry, VacantEntry};
 /// assert_eq!(letters[&'u'], 1);
 /// assert_eq!(letters.get(&'y'), None);
 /// ```
-#[cfg(has_std)]
 pub struct IndexMap<K, V, S = RandomState> {
-    core: IndexMapCore<K, V>,
-    hash_builder: S,
-}
-#[cfg(not(has_std))]
-pub struct IndexMap<K, V, S> {
     core: IndexMapCore<K, V>,
     hash_builder: S,
 }

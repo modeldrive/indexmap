@@ -22,8 +22,8 @@ This crate was initially published under the name ordermap, but it was renamed t
 indexmap.
 """
 
-keywords = ["hashmap", "no_std"]
-categories = ["data-structures", "no-std"]
+keywords = ["hashmap"]
+categories = ["data-structures"]
 
 build = "build.rs"
 
@@ -54,9 +54,6 @@ serde_derive = "1.0"
 # Serialization with serde 1.0
 serde-1 = ["serde"]
 
-# Force the use of `std`, bypassing target detection.
-std = []
-
 # for testing only, of course
 test_low_transition_point = []
 test_debug = []
@@ -72,4 +69,4 @@ tag-name = "{{version}}"
 features = ["serde-1", "rayon"]
 
 [workspace]
-members = ["test-nostd", "test-serde"]
+members = ["test-serde"]
